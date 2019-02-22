@@ -1,0 +1,1 @@
+json.partial! "household.json.jbuilder", household: @household
