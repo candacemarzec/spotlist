@@ -1,5 +1,6 @@
-json.id item.id
+# json.id item.id
 json.name item.name
 json.coupon_url item.coupon_url
 json.image_url item.image_url
 json.need_by_date item.need_by_date
+

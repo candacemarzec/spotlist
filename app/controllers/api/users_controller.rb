@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
       )
     if @user.save
-      render json: {message: 'User created successfully'}, status: :created
+      render 'show.json.jbuilder'
     else
       render json: {errors: @user.errors.full_messages}, status: :bad_request
     end
@@ -19,13 +19,13 @@ class Api::UsersController < ApplicationController
 
   
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     render 'show.json.jbuilder'
   end
 
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     @user.first_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
@@ -43,12 +43,5 @@ class Api::UsersController < ApplicationController
     render json: {message: "This account has been successfully deleted."}
     
   end
-
-
-
-
-
-
-
 
 end

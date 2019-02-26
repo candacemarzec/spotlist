@@ -7,7 +7,8 @@ class Api::ItemsController < ApplicationController
       name: params[:name],
       coupon_url: params[:coupon_url],
       image_url: params[:image_url],
-      need_by_date: params[:need_by_date]
+      need_by_date: params[:need_by_date],
+      list_id: params[:list_id]
       )
     if @item.save
       render 'show.json.jbuilder'

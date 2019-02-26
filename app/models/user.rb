@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   belongs_to :household, optional: true
-  has_many :lists
+  has_many :lists, dependent: :destroy
 
 
 end

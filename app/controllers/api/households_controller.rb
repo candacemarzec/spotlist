@@ -7,6 +7,7 @@ class Api::HouseholdsController < ApplicationController
       name: params[:name]
       )
     if @household.save
+      current_user.update(household_id: @household.id) 
       render 'show.json.jbuilder'
     else 
       render json: {errors: @household.errors.full_messages}, status: :unprocessable_entity
@@ -16,6 +17,7 @@ class Api::HouseholdsController < ApplicationController
   def show
     @household = Household.find_by(id: params[:id])
     render 'show.json.jbuilder'
+   
   end
 
   def update
