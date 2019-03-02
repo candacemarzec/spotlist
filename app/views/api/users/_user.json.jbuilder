@@ -2,4 +2,7 @@ json.id user.id
 json.first_name user.first_name
 json.last_name user.last_name
 json.email user.email
-json.household_name user.household.name
+
+json.formatted do
+  json.full_name user.full_name
+end  
