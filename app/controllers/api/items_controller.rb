@@ -8,6 +8,7 @@ class Api::ItemsController < ApplicationController
       coupon_url: params[:coupon_url],
       image_url: params[:image_url],
       need_by_date: params[:need_by_date],
+      quantity: params[:quantity],
       list_id: params[:list_id]
       )
     if @item.save
@@ -29,6 +30,7 @@ class Api::ItemsController < ApplicationController
     @item.coupon_url = params[:coupon_url] || @item.coupon_url
     @item.image_url = params[:image_url] || @item.image_url
     @item.need_by_date = params[:need_by_date] || @item.need_by_date
+    @item.quantity = params[:quantity] || @item.quantity
 
     if @item.save
       render 'show.json.jbuilder'
