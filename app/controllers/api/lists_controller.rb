@@ -17,12 +17,13 @@ class Api::ListsController < ApplicationController
     if @list.save
       render 'show.json.jbuilder'
     else 
+      puts @list.errors.full_messages
       render json: {errors: @list.errors.full_messages}, status: :unprocessable_entity  
     end
   end
 
   def show
-    @list = List.find(params[:id])
+    @list = current_user.list
     render 'show.json.jbuilder'
   end
   
@@ -40,7 +41,7 @@ class Api::ListsController < ApplicationController
 
 
   def destroy
-    @list = List.find(params[:id]) 
+    @list = List.find(params[:id])
     @list.destroy
     render json: {message: "The list has been deleted."}
   end

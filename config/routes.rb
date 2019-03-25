@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   namespace :api do
 
     post "/users" => "users#create"
-    get "/users/:id" => "users#show"
-    patch "/users/:id" => "users#update"
-    delete "/users/:id" => "users#destroy"
+    get "/users/me" => "users#show"
+    patch "/users/me" => "users#update"
+    delete "/users/me" => "users#destroy"
 
     post "/sessions" => "sessions#create"
 
@@ -22,23 +22,23 @@ Rails.application.routes.draw do
     
 
     post "/households" => "households#create"
-    get "/households/:id" => "households#show"
+    get "/household" => "households#show"
     patch "/households/:id" => "households#update"
     delete "/households/:id" => "households#destroy"
 
 
   end 
 
-  # get "users/new" => "users#new"
-  # get "users/:id/edit" => "users#edit"
+  get "/users/new" => "users#new"
+  get "/users/:id/edit" => "users#edit"
 
-  # get " lists/new" => "lists#new"
-  # get "lists/:id/edit" => "lists#edit"
+  get "/lists/new" => "lists#new"
+  get "/lists/:id/edit" => "lists#edit"
 
-  # get " items/new" => "items#new"
-  # get "items/:id/edit" => "items#edit"
+  get "/items/new" => "items#new"
+  get "/items/:id/edit" => "items#edit"
 
-  # get " households/new" => "households#new"
-  # get "households/:id/edit" => "households#edit"
+  get "/households/new" => "households#new"
+  get "/households/:id/edit" => "households#edit"
 
 end
