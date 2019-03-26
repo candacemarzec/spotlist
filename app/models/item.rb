@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   validates :name, presence: true
 
   belongs_to :list
+  belongs_to :user
 
 
   # def friendly_need_by_date

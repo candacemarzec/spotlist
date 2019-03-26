@@ -5,6 +5,7 @@ json.image_url item.image_url
 json.need_by_date item.need_by_date
 json.created_at item.created_at
 json.quantity item.quantity
+json.user item.user.first_name
 
 
 

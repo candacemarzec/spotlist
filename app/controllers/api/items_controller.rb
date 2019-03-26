@@ -9,7 +9,8 @@ class Api::ItemsController < ApplicationController
       image_url: params[:image_url],
       need_by_date: params[:need_by_date],
       quantity: params[:quantity],
-      list_id: params[:list_id]
+      list_id: params[:list_id],
+      user_id: current_user.id
       )
     if @item.save
       render 'show.json.jbuilder'
@@ -20,7 +21,7 @@ class Api::ItemsController < ApplicationController
 
 
   def show
-    @item = Item.find_by(id: params[:id])
+    @item = current_user.item
     render 'show.json.jbuilder'
   end
 
