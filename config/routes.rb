@@ -41,4 +41,6 @@ Rails.application.routes.draw do
   get "/households/new" => "households#new"
   get "/households/:id/edit" => "households#edit"
 
+  get "/*path" => proc { [200, {}, [ActionView::Base.new.render(file: 'public/index.html')]] }
+
 end
