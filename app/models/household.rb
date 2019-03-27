@@ -6,6 +6,4 @@ class Household < ApplicationRecord
   has_many :lists
  
 
-
-
 end

@@ -7,7 +7,15 @@ class Api::HouseholdsController < ApplicationController
       name: params[:name]
       )
     if @household.save
-      current_user.update(household_id: @household.id) 
+      current_user.update(household_id: @household.id)
+      if params[:new_member_email]
+        user = User.find_by(email: params[:new_member_email])
+        if user 
+          user.update(household_id: @household.id)
+        else 
+          return render json: {errors: ["This member doesn't have an account"]}, status: :unprocessable_entity 
+        end  
+      end 
       render 'show.json.jbuilder'
     else 
       render json: {errors: @household.errors.full_messages}, status: :unprocessable_entity
@@ -24,12 +32,12 @@ class Api::HouseholdsController < ApplicationController
     @household = current_user.household
     @household.name = params[:name] || @household.name
 
-    if params[:new_member_email]
-      user = User.find_by(email: params[:new_member_email])
+    if params[:update_member_email]
+      user = User.find_by(email: params[:update_member_email])
       if user 
         user.update(household_id: params[:id])
       else 
-        return render json: {errors: ["Email does not exist"]}, status: :unprocessable_entity 
+        return render json: {errors: ["This member doesn't have an account"]}, status: :unprocessable_entity 
       end  
     end
 
