@@ -8,7 +8,7 @@ class User < ApplicationRecord
   
 
   belongs_to :household, optional: true
-  has_many :items
+  has_many :items, optional: true
   has_many :lists, optional: true, dependent: :destroy
 
   def full_name
