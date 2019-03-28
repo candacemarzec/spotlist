@@ -1,18 +1,18 @@
+User.create!([
+  {first_name: "Erin", last_name: "Jones", email: "ejones@gmail.com", password_digest: "$2a$10$CeHkmlAu.mhPkvPKD7t.LOctPplGYV7zkaZwtCS0AuMWpyRRFuyrC", household_id: nil},
+  {first_name: "Karen ", last_name: "Jones", email: "kjones@gmail.com", password_digest: "$2a$10$mDQGzy1CQDzMJksvjhpn9uAuAAA6MmGMhbUf3w1CEjal6iNEGwMZy", household_id: 55},
+  {first_name: "Jim", last_name: "Jones", email: "jjones@gmail.com", password_digest: "$2a$10$nspKw9g5/Yze8FcK/AqUZO4yq1TI/iiwpwBZ.Gu5N1PHVLfhJSHXi", household_id: 55},
+  {first_name: "Michael", last_name: "Smith", email: "smith@gmail.com", password_digest: "$2a$10$flD2ylE6gtpdhWUHGlEUBezBpxYvfkphh01m0C3yADOvh2MBdDQny", household_id: nil}
+])
 Household.create!([
   {name: "Jones"}
 ])
 List.create!([
   {store_name: "Target", notes: "Pick up photos", household_id: 55, user_id: 59},
   {store_name: "CVS", notes: "", household_id: 55, user_id: 59},
-  {store_name: "Ace Hardware", notes: "Check for tulip seeds", household_id: 55, user_id: 60},
+  {store_name: "Ace Hardware", notes: "Check for tulip bulbs", household_id: 55, user_id: 60},
   {store_name: "Whole Foods", notes: "", household_id: nil, user_id: 62},
   {store_name: "Trader Joe's", notes: "look for raw cashews", household_id: nil, user_id: 62}
-])
-User.create!([
-  {first_name: "Erin", last_name: "Jones", email: "ejones@gmail.com", password_digest: "$2a$10$CeHkmlAu.mhPkvPKD7t.LOctPplGYV7zkaZwtCS0AuMWpyRRFuyrC", household_id: nil},
-  {first_name: "Karen ", last_name: "Jones", email: "kjones@gmail.com", password_digest: "$2a$10$mDQGzy1CQDzMJksvjhpn9uAuAAA6MmGMhbUf3w1CEjal6iNEGwMZy", household_id: 55},
-  {first_name: "Jim", last_name: "Jones", email: "jjones@gmail.com", password_digest: "$2a$10$nspKw9g5/Yze8FcK/AqUZO4yq1TI/iiwpwBZ.Gu5N1PHVLfhJSHXi", household_id: 55},
-  {first_name: "Michael", last_name: "Smith", email: "smith@gmail.com", password_digest: "$2a$10$flD2ylE6gtpdhWUHGlEUBezBpxYvfkphh01m0C3yADOvh2MBdDQny", household_id: nil}
 ])
 Item.create!([
   {name: "broom", coupon_url: "", image_url: "", need_by_date: nil, list_id: 67, quantity: "", user_id: 59},
