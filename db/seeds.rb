@@ -6,7 +6,6 @@ User.create!([
 ])
 Household.create!([
   {name: "Jones"},
-  {name: "Smith"}
 ])
 List.create!([
   {store_name: "Target", notes: "Pick up photos", household_id: 55, user_id: 59},
