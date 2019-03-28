@@ -5,7 +5,8 @@ User.create!([
   {first_name: "Michael", last_name: "Smith", email: "smith@gmail.com", password_digest: "$2a$10$flD2ylE6gtpdhWUHGlEUBezBpxYvfkphh01m0C3yADOvh2MBdDQny", household_id: nil}
 ])
 Household.create!([
-  {name: "Jones"}
+  {name: "Jones"},
+  {name: "Smith"}
 ])
 List.create!([
   {store_name: "Target", notes: "Pick up photos", household_id: 55, user_id: 59},

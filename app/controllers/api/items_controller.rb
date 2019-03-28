@@ -21,7 +21,7 @@ class Api::ItemsController < ApplicationController
 
 
   def show
-    @item = current_user.item
+    @item = Item.find_by(id: params[:id])
     render 'show.json.jbuilder'
   end
 

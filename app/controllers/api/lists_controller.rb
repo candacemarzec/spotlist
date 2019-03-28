@@ -23,7 +23,7 @@ class Api::ListsController < ApplicationController
   end
 
   def show
-    @list = current_user.list
+    @list = List.find(params[:id])
     render 'show.json.jbuilder'
   end
   
